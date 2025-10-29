@@ -66,7 +66,7 @@ void Lcd_Command(unsigned char command)
 	GPIOA->ODR &= ~(1<<6);  // EN = 0
 }
 ```
-Data Function
+### Data Function
 
 Sends ASCII characters or data bytes to the LCD.
 ```c
@@ -80,7 +80,7 @@ void Lcd_data(unsigned char data)
 	GPIOA->ODR &= ~(1<<6);  // EN = 0
 }
 ```
-LCD Initialization
+### LCD Initialization
 ```c
 void Lcd_Initialise(void)
 {
@@ -90,20 +90,21 @@ void Lcd_Initialise(void)
 	Lcd_Command(0x01); // Clear display
 }
 ```
-### 💬 Display Output
+## 💬 Display Output
 Command	Action
 0x80	Set cursor to first line
 0xC0	Set cursor to second line
 "Embedded"	Displayed on first line
 "Systems"	Displayed on second line
-### 🖼️ Output
+
+## 🖼️ Output
 
 LCD Display:
 
 Embedded
 Systems
 
-### 🧩 Functions Summary
+## 🧩 Functions Summary
 Function	Description
 Printdata()	Maps 8-bit data to GPIO pins
 Lcd_Command()	Sends LCD command instructions
@@ -111,7 +112,7 @@ Lcd_data()	Sends display characters
 Lcd_String()	Displays string on LCD
 Lcd_Initialise()	Initializes LCD configuration
 
-### 🕹️ Working Principle
+## 🕹️ Working Principle
 
 GPIO ports are configured as outputs.
 
@@ -121,7 +122,7 @@ Data bytes (characters) are sent one by one to form text.
 
 Enable (EN) pulse latches each data/command to the LCD.
 
-### 🧠 Key Learning Points
+## 🧠 Key Learning Points
 
 Register-level programming using RCC, GPIO MODER, and ODR.
 
@@ -131,7 +132,7 @@ Timing control via manual enable pulse and software delay.
 
 Writing clean modular functions for LCD display control.
 
-### 🚀 Future Enhancements
+## 🚀 Future Enhancements
 
 Implement 4-bit LCD mode to reduce pin usage.
 
